@@ -1,0 +1,22 @@
+class Solution(object):
+    def searchMatrix(self, matrix, target):
+        if not matrix or not matrix[0]:
+            return False
+
+        rows = len(matrix)
+        cols = len(matrix[0])
+
+        row = 0
+        col = cols - 1  # start at top-right corner
+
+        while row < rows and col >= 0:
+            value = matrix[row][col]
+
+            if value == target:
+                return True
+            elif value < target:
+                row += 1   # too small — eliminate this row
+            else:
+                col -= 1   # too big — eliminate this column
+
+        return False
