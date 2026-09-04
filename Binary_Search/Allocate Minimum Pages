@@ -1,0 +1,33 @@
+class Solution:
+    def findPages(self, arr, k):
+        n = len(arr)
+    
+        # If there are fewer books than students, allocation is impossible
+        if k > n:
+            return -1
+    
+        def isPossible(maxPages):
+            students = 1
+            pagesSoFar = 0
+            for pages in arr:
+                if pagesSoFar + pages <= maxPages:
+                    pagesSoFar += pages
+                else:
+                    students += 1
+                    pagesSoFar = pages
+                    if students > k:
+                        return False
+            return True
+    
+        low, high = max(arr), sum(arr)
+        ans = high
+    
+        while low <= high:
+            mid = low + (high - low) // 2
+            if isPossible(mid):
+                ans = mid
+                high = mid - 1   # try to reduce the max further
+            else:
+                low = mid + 1
+    
+        return ans
