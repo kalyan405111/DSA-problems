@@ -1,0 +1,16 @@
+class Solution(object):
+    def pivotIndex(self, nums):
+        n = len(nums)
+        prefix = [0] * (n + 1)
+
+        for i in range(n):
+            prefix[i + 1] = prefix[i] + nums[i]
+
+        for i in range(n):
+            l = prefix[i]                    # sum of everything left of i
+            r = prefix[n] - prefix[i + 1]     # sum of everything right of i
+
+            if l == r:
+                return i
+
+        return -1
