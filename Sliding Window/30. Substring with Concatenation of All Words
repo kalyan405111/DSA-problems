@@ -1,0 +1,56 @@
+from typing import List
+from collections import Counter
+
+class Solution:
+    def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        if not s or not words:
+            return []
+
+        word_len = len(words[0])
+        num_words = len(words)
+        total_len = word_len * num_words
+        n = len(s)
+
+        if n < total_len:
+            return []
+
+        word_count = Counter(words)  # target frequency of each word
+        result = []
+
+        # try every starting offset within one word length
+        for offset in range(word_len):
+            left = offset
+            count = 0                 # how many words currently matched in window
+            window = Counter()        # frequency map of words currently in window
+
+            # slide right pointer in word_len steps
+            for right in range(offset, n - word_len + 1, word_len):
+                word = s[right:right + word_len]
+
+                if word in word_count:
+                    window[word] += 1
+                    count += 1
+
+                    # if this word now appears too many times, shrink from left
+                    while window[word] > word_count[word]:
+                        left_word = s[left:left + word_len]
+                        window[left_word] -= 1
+                        count -= 1
+                        left += word_len
+
+                    # found a full valid window
+                    if count == num_words:
+                        result.append(left)
+                        # slide window forward by one word to look for next match
+                        left_word = s[left:left + word_len]
+                        window[left_word] -= 1
+                        count -= 1
+                        left += word_len
+
+                else:
+                    # word not in words at all -> reset window entirely
+                    window.clear()
+                    count = 0
+                    left = right + word_len
+
+        return result992. Subarrays with K Different Integers
