@@ -1,0 +1,23 @@
+class Solution(object):
+    def checkInclusion(self, s1, s2):
+        if len(s1) > len(s2):
+            return False
+
+        n = len(s1)
+        s1_count = [0] * 26
+        s2_count = [0] * 26
+
+        for i in range(n):
+            s1_count[ord(s1[i]) - ord('a')] += 1
+            s2_count[ord(s2[i]) - ord('a')] += 1
+
+        if s1_count == s2_count:
+            return True
+
+        for j in range(n, len(s2)):
+            s2_count[ord(s2[j]) - ord('a')] += 1
+            s2_count[ord(s2[j - n]) - ord('a')] -= 1
+            if s1_count == s2_count:
+                return True
+
+        return False
