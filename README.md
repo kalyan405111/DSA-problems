@@ -1,176 +1,63 @@
 # DSA Problems
 
-A personal collection of Data Structures and Algorithms solutions, mostly from LeetCode, organized by topic. Built while preparing for entry-level Full Stack Developer / SWE interviews.
+A growing collection of Data Structures & Algorithms problems solved in Python, as part of my prep for entry-level Software Engineer / Full Stack Developer roles.
+
+## About
+
+This repo tracks my solutions to problems from LeetCode and other practice platforms, organized by topic/pattern rather than by difficulty — the goal is to build pattern recognition (e.g. "this is a sliding window problem", "this needs a monotonic stack") rather than memorizing individual solutions.
 
 ## Structure
 
-Each topic has its own folder, and each file is a self-contained Python solution named after the problem it solves.
-
 ```
 DSA-problems/
-├── Arrays/
-├── Two_Pointers/
-├── Strings/
-├── Hashing/
-├── Binary_Search/
-├── Bit_Manipulation/
-├── Sorting/
-├── Dynamic_Programming/
-├── Matrix/
-├── Backtracking/
-├── Math/
-└── Patterns/
+├── Arrays/              # 19 problems
+├── Backtracking/         # 1 problem
+├── Binary_Search/         # 20 problems
+├── Bit_Manipulation/      # 12 problems
+├── Dynamic_Programming/   # 7 problems
+├── Hashing/               # 12 problems
+├── Math/                  # 7 problems
+├── Matrix/                # 3 problems
+├── Patterns/              # 3 problems (pattern-printing exercises)
+├── PrefixSum/             # 8 problems
+├── Sliding Window/        # 12 problems
+├── Sorting/                # 3 problems
+├── Stack/                  # 10 problems
+├── Strings/                # 11 problems
+├── Two_Pointers/           # 17 problems
+└── README.md
 ```
 
-## Index
+## Topics Covered
 
-### Arrays (18)
+- **Arrays** — majority element, next permutation, merge intervals, missing number, rearranging elements
+- **Backtracking** — subsets
+- **Binary Search** — search in rotated array, peak finding, "search a 2D matrix", allocate minimum pages, aggressive cows, binary search on answer
+- **Bit Manipulation** — single number variants, power of two, XOR tricks, bit counting, cinema seat allocation
+- **Dynamic Programming** — max subarray, longest palindromic substring, buy/sell stock, longest subsequence
+- **Hashing** — two sum, group anagrams, top K frequent, longest consecutive sequence, isomorphic strings
+- **Math** — Roman numeral conversion, prime counting, digit manipulation
+- **Matrix** — rotate matrix, spiral traversal, set matrix zeroes
+- **Patterns** — number/star/alphabet pattern printing
+- **Prefix Sum** — subarray sum equals K, product of array except self, range sum queries
+- **Sliding Window** — longest substring without repeating characters, minimum window substring, sliding window maximum, subarrays with K distinct integers, substring with concatenation of all words
+- **Sorting** — bubble sort, merge sort, counting inversions
+- **Stack** — valid parentheses, min stack, queue using stacks, evaluate RPN, decode string, remove K digits, daily temperatures, next greater element (I & II), asteroid collision
+- **Strings** — longest common prefix, atoi, pattern searching, shortest palindrome, string rotation
+- **Two Pointers** — container with most water, trapping rain water, 3Sum/4Sum, move zeroes, partition labels, sort colors
 
-- [checkIfArrayIsSorted](Arrays/checkIfArrayIsSorted.py)
-- [distributeElementsIntoTwoArrays](Arrays/distributeElementsIntoTwoArrays.py)
-- [findLargestElement](Arrays/findLargestElement.py)
-- [firstAndLastOccurrence](Arrays/firstAndLastOccurrence.py)
-- [getMinMax](Arrays/getMinMax.py)
-- [largestInArray](Arrays/largestInArray.py)
-- [majorityElement](Arrays/majorityElement.py)
-- [majorityElementII](Arrays/majorityElementII.py)
-- [maxConsecutiveOnes](Arrays/maxConsecutiveOnes.py)
-- [mergeIntervals](Arrays/mergeIntervals.py)
-- [missingAndRepeating](Arrays/missingAndRepeating.py)
-- [missingNumber_sumMethod](Arrays/missingNumber_sumMethod.py)
-- [missingNumber_xorMethod](Arrays/missingNumber_xorMethod.py)
-- [nextPermutation](Arrays/nextPermutation.py)
-- [rearrangeArray](Arrays/rearrangeArray.py)
-- [rotateArrayByKPlaces](Arrays/rotateArrayByKPlaces.py)
-- [separateDigits](Arrays/separateDigits.py)
-- [subarraySumEqualsK](Arrays/subarraySumEqualsK.py)
+## How I'm Using This Repo
 
-### Two Pointers (5)
+- Working through one pattern at a time, aiming to internalize the *why* behind each approach before moving on
+- Solutions prioritize correctness first, then get cleaned up for readability and complexity
+- Part of a structured 12-week DSA study plan aimed at interview readiness for fresher SWE roles
 
-- [isPalindrome](Two_Pointers/isPalindrome.py)
-- [mergeSortedArray](Two_Pointers/mergeSortedArray.py)
-- [removeDuplicatesFromSortedArray](Two_Pointers/removeDuplicatesFromSortedArray.py)
-- [reverseString](Two_Pointers/reverseString.py)
-- [sortColors](Two_Pointers/sortColors.py)
+## Tech
 
-### Strings (11)
-
-- [indexOfFirstOccurrence](Strings/indexOfFirstOccurrence.py)
-- [lengthOfLongestSubstring](Strings/lengthOfLongestSubstring.py)
-- [lexGreaterPermutation](Strings/lexGreaterPermutation.py)
-- [longestCommonPrefix](Strings/longestCommonPrefix.py)
-- [maximumLengthSubstring](Strings/maximumLengthSubstring.py)
-- [minimumWindowSubstring](Strings/minimumWindowSubstring.py)
-- [myAtoi](Strings/myAtoi.py)
-- [naivePatternSearching](Strings/naivePatternSearching.py)
-- [reverseWordsInAString](Strings/reverseWordsInAString.py)
-- [rotateString](Strings/rotateString.py)
-- [shortestPalindrome](Strings/shortestPalindrome.py)
-
-### Hashing (12)
-
-- [containsDuplicate](Hashing/containsDuplicate.py)
-- [firstUniqChar](Hashing/firstUniqChar.py)
-- [fourSumCount](Hashing/fourSumCount.py)
-- [frequencySort](Hashing/frequencySort.py)
-- [groupAnagrams](Hashing/groupAnagrams.py)
-- [intersectionOfTwoArraysII](Hashing/intersectionOfTwoArraysII.py)
-- [isAnagram](Hashing/isAnagram.py)
-- [isIsomorphic](Hashing/isIsomorphic.py)
-- [longestConsecutiveSequence](Hashing/longestConsecutiveSequence.py)
-- [topKFrequentElements](Hashing/topKFrequentElements.py)
-- [twoSum](Hashing/twoSum.py)
-- [wordPattern](Hashing/wordPattern.py)
-
-### Binary Search (11)
-
-- [arraySearch](Binary_Search/arraySearch.py)
-- [binarySearch](Binary_Search/binarySearch.py)
-- [countZeroes](Binary_Search/countZeroes.py)
-- [findMinimumInRotatedSortedArray](Binary_Search/findMinimumInRotatedSortedArray.py)
-- [findPeakElement](Binary_Search/findPeakElement.py)
-- [firstAndLastPositionOfElement](Binary_Search/firstAndLastPositionOfElement.py)
-- [guessNumber](Binary_Search/guessNumber.py)
-- [mySqrt](Binary_Search/mySqrt.py)
-- [searchInRotatedSortedArray](Binary_Search/searchInRotatedSortedArray.py)
-- [searchInsertPosition](Binary_Search/searchInsertPosition.py)
-- [singleNonDuplicate](Binary_Search/singleNonDuplicate.py)
-
-### Bit Manipulation (12)
-
-- [checkKthBit](Bit_Manipulation/checkKthBit.py)
-- [cinemaSeatAllocation](Bit_Manipulation/cinemaSeatAllocation.py)
-- [countBits](Bit_Manipulation/countBits.py)
-- [divideTwoIntegers](Bit_Manipulation/divideTwoIntegers.py)
-- [findMaximumXOR](Bit_Manipulation/findMaximumXOR.py)
-- [isPowerOfTwo](Bit_Manipulation/isPowerOfTwo.py)
-- [numberOf1Bits](Bit_Manipulation/numberOf1Bits.py)
-- [rangeBitwiseAnd](Bit_Manipulation/rangeBitwiseAnd.py)
-- [reverseBits](Bit_Manipulation/reverseBits.py)
-- [singleNumber](Bit_Manipulation/singleNumber.py)
-- [singleNumberII](Bit_Manipulation/singleNumberII.py)
-- [singleNumberIII](Bit_Manipulation/singleNumberIII.py)
-
-### Sorting (3)
-
-- [bubbleSort](Sorting/bubbleSort.py)
-- [countInversions](Sorting/countInversions.py)
-- [mergeSort](Sorting/mergeSort.py)
-
-### Dynamic Programming (7)
-
-- [bestTimeToBuyAndSellStock](Dynamic_Programming/bestTimeToBuyAndSellStock.py)
-- [longestPalindromicSubstring](Dynamic_Programming/longestPalindromicSubstring.py)
-- [longestSubsequence](Dynamic_Programming/longestSubsequence.py)
-- [maximumProductSubarray](Dynamic_Programming/maximumProductSubarray.py)
-- [maximumSubarray](Dynamic_Programming/maximumSubarray.py)
-- [pascalsTriangle](Dynamic_Programming/pascalsTriangle.py)
-- [stoneGameVIII](Dynamic_Programming/stoneGameVIII.py)
-
-### Matrix (3)
-
-- [rotateMatrix](Matrix/rotateMatrix.py)
-- [setMatrixZeroes](Matrix/setMatrixZeroes.py)
-- [spiralMatrix](Matrix/spiralMatrix.py)
-
-### Backtracking (1)
-
-- [subsets](Backtracking/subsets.py)
-
-### Math (7)
-
-- [countDigits](Math/countDigits.py)
-- [countPrimes](Math/countPrimes.py)
-- [missingMultipleOfK](Math/missingMultipleOfK.py)
-- [reverseInteger](Math/reverseInteger.py)
-- [romanToInteger](Math/romanToInteger.py)
-- [smallestNumberGivenDigitProduct](Math/smallestNumberGivenDigitProduct.py)
-- [uniquePrimeFactors](Math/uniquePrimeFactors.py)
-
-### Patterns (3)
-
-- [alphabetPatterns](Patterns/alphabetPatterns.py)
-- [numberPatterns](Patterns/numberPatterns.py)
-- [starPatterns](Patterns/starPatterns.py)
-## How to use
-
-```bash
-git clone https://github.com/kalyan405111/DSA-problems.git
-cd DSA-problems
-```
-
-Open any file directly — solutions are grouped by topic so you can jump straight to the pattern you're practicing (e.g. `Binary_Search/` for search-space problems, `Two_Pointers/` for in-place array problems).
-
-## Notes
-
-- `Arrays/missingNumber_sumMethod.py` and `Arrays/missingNumber_xorMethod.py` solve the same problem (LeetCode 268) with two different approaches — sum-based and XOR-based — kept side by side for comparison.
-- Solutions favor readability and interview-style reasoning over micro-optimized one-liners.
+- Language: Python 3
+- Practice platforms: LeetCode, and others
 
 ## Connect
 
 - GitHub: [kalyan405111](https://github.com/kalyan405111)
 - LinkedIn: [kalyanyalla](https://linkedin.com/in/kalyanyalla)
-
----
-
-⭐ If this is useful for your own DSA practice, consider giving it a star.
