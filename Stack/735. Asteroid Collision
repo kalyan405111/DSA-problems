@@ -1,0 +1,16 @@
+class Solution(object):
+    def asteroidCollision(self, asteroids):
+        stack = []
+        for a in asteroids:
+            alive = True
+            while alive and a < 0 and stack and stack[-1] > 0:
+                if stack[-1] < -a:
+                    stack.pop()       # top asteroid destroyed, current keeps moving left, keep checking
+                elif stack[-1] == -a:
+                    stack.pop()       # both destroy each other
+                    alive = False
+                else:
+                    alive = False     # top asteroid survives, current is destroyed
+            if alive:
+                stack.append(a)
+        return stack
