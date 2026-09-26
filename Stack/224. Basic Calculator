@@ -1,0 +1,43 @@
+class Solution(object):
+    def calculate(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        stack = []
+        result = 0
+        number = 0
+        sign = 1   # +1 or -1, applies to the current number being built
+
+        for char in s:
+            if char.isdigit():
+                number = number * 10 + int(char)
+
+            elif char == "+":
+                result += sign * number
+                number = 0
+                sign = 1
+
+            elif char == "-":
+                result += sign * number
+                number = 0
+                sign = -1
+
+            elif char == "(":
+                # save current result and sign, start fresh for the sub-expression
+                stack.append(result)
+                stack.append(sign)
+                result = 0
+                sign = 1
+
+            elif char == ")":
+                result += sign * number
+                number = 0
+                # pop sign and result that were active before this '('
+                result *= stack.pop()   # this was the sign before '('
+                result += stack.pop()   # this was the result before '('
+
+            # spaces are ignored (no matching branch)
+
+        result += sign * number
+        return result
